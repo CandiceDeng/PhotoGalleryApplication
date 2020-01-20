@@ -12,7 +12,7 @@
 */
 //Registration controller
 Route::get('/register', 'RegisterController@create');
-Route::post('register', 'RegisterController@store');
+Route::post('/register', 'RegisterController@store');
 
 //PhotoGallery(index) page
 Route::get('/gallery', function () {
@@ -20,10 +20,9 @@ Route::get('/gallery', function () {
 });
 
 //Session related actions controller (sign in / sign out)
-Route::get('/login', 'SessionsController@create');
-Route::post('/login', 'SessionsController@store');
-Route::get('/logout', 'SessionsController@destroy');
+Route::get('/login', 'SessionsController@checkLogin');
+Route::post('/login', 'SessionsController@successfulLogin');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });

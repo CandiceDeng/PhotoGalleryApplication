@@ -251,6 +251,12 @@ footer p {
     margin: 10px 0;
 }
 
+.alert {
+	color: red;
+	font-size: 12px;
+	text-decoration: none;
+}
+
 //////////////////// PhotoGallery ///////////////////////////
 .control {
 	display: inline-block;
@@ -392,6 +398,9 @@ footer p {
 #slider-range {
   width: 90%;
   margin: 0 auto;
+}
+.blank {
+	height: 20px;
 }
 
 @media only screen and (max-width: 900px){

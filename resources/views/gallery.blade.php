@@ -58,5 +58,3 @@ $urls = explode(',', $output);
       <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
-
-<!-- export PATH=${PATH}:/usr/local/mysql/bin -->

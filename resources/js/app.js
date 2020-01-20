@@ -7,6 +7,14 @@ var main = function(){
   $('#signIn').on('click',()=>{
     $('#container').removeClass('right-panel-active');
   });
+  $('#signUp').click(function() {
+     window.history.pushState('', '', '/register');
+     return false;
+   });
+   $('#signIn').click(function() {
+      window.history.pushState('', '', '/login');
+      return false;
+    });
   $("img").hover(function() {
     $(this).addClass("blur-image");
   },

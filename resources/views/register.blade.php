@@ -18,32 +18,54 @@
       <div class="container" id="container">
       	<div class="form-container sign-up-container">
       		<form method="POST" action="/register">
-            @csrf <!-- {{ csrf_field() }} -->
       			<h1>Create Account</h1>
       			<span>with your email for registration</span>
-            <div class="form-group">
-      		      <input type="text" class="form-control" id="username" placeholder="Name" name="username"/>
-            </div>
-            <div class="form-group">
-      			     <input type="email" class="form-control" id="email" placeholder="Email" name="email"/>
-            </div>
-            <div class="form-group">
-      			     <input type="password" class="form-control" id="password" placeholder="Password" name="password"/>
-            </div>
-            <div class="form-group">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <!-- <div class="form-group"> -->
+      		      <input type="text" class="form-control" id="username" placeholder="Name (*Required)" name="username"/>
+            <!-- </div> -->
+            <!-- <div class="form-group"> -->
+      			     <input type="email" class="form-control" id="email" placeholder="Email (*Required)" name="email"/>
+            <!-- </div> -->
+            <!-- <div class="form-group"> -->
+      			     <input type="password" class="form-control" id="password" placeholder="Password (*Required)" name="password"/>
+            <!-- </div> -->
+            <!-- <div class="form-group"> -->
       			     <button style="cursor:pointer;" type="submit" class="btn btn-primary">Sign Up</button>
-            </div>
+            <!-- </div> -->
             @include('formErrors')
       		</form>
       	</div>
       	<div class="form-container sign-in-container">
-      		<form action="#">
+          <!-- @if ($message=Session::get('error'))
+              <div class="alert alert-danger alert-dismissible " style="font-size:14px;">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  {{ Session::get('message-login') }}
+              </div>
+          @endif -->
+          <!-- @if (count($errors)>0)
+              <div class="alert alert-danger alert-dismissible " style="font-size:15px;color:red">
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+              </div>
+          @endif -->
+      		<form method="POST">
+            {{ csrf_field() }}
       			<h1>Sign in</h1>
       			<span>with your account</span>
-      			<input type="email" placeholder="Email" name="email"/>
-      			<input type="password" placeholder="Password" name="password"/>
-      			<a href="#">Forgot your password?</a>
+            <!-- <div class="form-group {{ $errors->has('login-username') ? ' has-error' : '' }}"> -->
+      			     <input type="email" class="form-control" placeholder="Email" name="login-email"/>
+            <!-- </div> -->
+            <!-- <div class="form-group {{ $errors->has('login-password') ? ' has-error' : '' }}"> -->
+      			     <input type="password" class="form-control" placeholder="Password" name="login-password"/>
+            <!-- <div> -->
+            <div class="blank"></div>
+      			<!-- <a href="#">Forgot your password?</a> -->
       			<button>Sign In</button>
+            <!-- @include('formErrors') -->
       		</form>
       	</div>
       	<div class="overlay-container">
@@ -68,3 +90,5 @@
       <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
+
+<!-- export PATH=${PATH}:/usr/local/mysql/bin -->
