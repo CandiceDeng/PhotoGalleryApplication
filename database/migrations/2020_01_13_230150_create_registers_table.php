@@ -13,12 +13,11 @@ class CreateRegistersTable extends Migration
      */
     public function up()
     {
-        Schema::create('registers', function (Blueprint $table) {
+        Schema::create('registration', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('username');
             $table->string('email');
-            $table->string('password')
+            $table->string('password');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateRegistersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registers');
+        Schema::dropIfExists('registration');
     }
 }

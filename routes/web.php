@@ -14,6 +14,11 @@
 Route::get('/register', 'RegisterController@create');
 Route::post('register', 'RegisterController@store');
 
+//PhotoGallery(index) page
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
 //Session related actions controller (sign in / sign out)
 Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
