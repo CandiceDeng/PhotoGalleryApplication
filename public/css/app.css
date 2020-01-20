@@ -451,7 +451,21 @@ footer p {
   height: 20px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) and (min-width: 500px) {
+  #filter-btn {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    height: 170px !important;
+  }
+
+  .gallery {
+    margin-top: 200px;
+  }
+
   #filter-btn {
     margin: 0 auto;
   }
