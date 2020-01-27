@@ -25,3 +25,11 @@ This application allows users to register in and get access to the photo gallery
 
 2. By moving the double-sided slider users could filter all images according to their dimension, only images with the right width would show on the page.
 <img src="photos/Dimension.png" alt="Change Dimension" width="450"/>
+
+### If run locally
+If you prefer to run it locally, please download this file and change directory to it by command “cd photoGalleryApplication” in your terminal first, and follow the steps below.
+
+-	Type “mysql -u root -p” in the terminal, enter your password to log in MySQL, if there is “command not found” error, try run “export PATH=${PATH}:/usr/local/mysql/bin” first.
+-	After logging in, try command “show databases;” to check if database “photoGallery” exists, if not, type command “create database photoGallery;” to create database
+-	By using “use database photoGallery;” to enter the database and try command “show tables” to check whether table “users” exists, if not, create the table by command “create table users(username varchar(255) NOT NULL, email varchar(255) NOT NULL, password varchar(255) NOT NULL, created_at TIMESTAMP NOT NULL, updated_at TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW());”
+-	Now backend database is properly set, entering all required information on the registration form would lead users to the photo gallery page.
